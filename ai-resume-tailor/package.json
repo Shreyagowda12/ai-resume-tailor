@@ -1,0 +1,32 @@
+{
+  "name": "ai-resume-tailor",
+  "version": "1.0.0",
+  "description": "AI Resume Tailor - ATS Resume Builder",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"see README: Running the tests\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cookie-parser": "^1.4.7",
+    "docx": "^9.10.0",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "mammoth": "^1.13.0",
+    "multer": "^2.4.0",
+    "nodemailer": "^10.1.0",
+    "pdf-parse": "^2.4.5",
+    "pdfkit": "^0.20.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,4 @@
+const fs = require('fs'); const PDFDocument = require('pdfkit'); const { Document, Packer, Paragraph } = require('docx');
+const lines = ['Shreya Gowda', 'shreya@example.com | +91 98765 43210 | Bengaluru', 'EXPERIENCE', 'Data Intern, Acme Analytics (Jun 2025 - Aug 2025)', '- responsible for cleaning sales data using Python', '- Built dashboards in Excel for 3 managers', 'EDUCATION', 'MCA, Bangalore University 2024-2026', 'PROJECTS', 'Helmet Detection - YOLO11m: trained a helmet-wearing classifier', 'SKILLS', 'Python, SQL, Excel, YOLO'];
+const d = new PDFDocument(); d.pipe(fs.createWriteStream(__dirname + '/resume.pdf')); lines.forEach((l) => d.text(l)); d.end();
+Packer.toBuffer(new Document({ sections: [{ children: lines.map((l) => new Paragraph(l)) }] })).then((b) => fs.writeFileSync(__dirname + '/resume.docx', b));
